@@ -14,7 +14,8 @@
 
 RMMV插件目录结构：
 
-<img src="F:\New server\MV_Online\phoneApp\js\img\1568810179082.png" alt="1568561611621" style="zoom: 67%;" />
+![pluginDesc.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/pluginDesc.png?raw=true)
+
 
 ### **【RpgmakerMV】插件编写实战一：跳过标题，为窗口添加win瓷砖风格背景&自定义菜单窗口位置、大小、透明度**
 
@@ -75,7 +76,7 @@ ImageManager.loadWPMenus = function(filename) {
 
 先在RMMV自带的Community_Basic.js插件中修改游戏分辨率为1200X720，然后为了方便我们布局背景图片的位置，可以在PS中将layout.png的尺寸同样调整为1200X720，RMMV中坐标原点的位置（0，0）在左上角，背景图片大小设置为游戏分辨率大小，就不用我们再去调整图片坐标点的位置，可以直接在这张图片里决定好背景图要在的位置，我们得到的图片如下，是win10开始菜单底图的样式：
 
-<img src="F:\New server\MV_Online\phoneApp\js\img\layout.png" alt="1568782193464" style="zoom:50%;" />
+<img src="https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/layout.png?raw=true" alt="layout.png" style="zoom:50%;" />
 
 在rpg_scenes.js中，我们可以在Scene_MenuBase类中找到Scene_MenuBase.prototype.createBackground，通过它我们可以便在菜单场景中载入图片元素。
 
@@ -132,7 +133,7 @@ Scene_Menu.prototype.createSprites = function(){
 
 同样的方法，可以为不同的窗口添加不同的图片背景，只是这一次需要将载入的图片坐标和窗口的坐标绑定在一起，并且要将窗口的透明度调整为0，为了实现这些，我们还需要创建Scene_Menu.prototype.update，Scene_Menu.prototype.updateSprites，Scene_Menu.prototype.updateLayout，当检测到用户加载了背景图后，会自动刷新，并执行updateLayout中设置的内容，完整代码如下，复制到你的插件中即可，本节结束：
 
-![1568797351921](F:\New server\phoneApp\js\img\1568797351921.png)
+![1568797351921](F:\New server\Tutorial\Plugin_Menu_Win10Style\img\1568797351921.png)
 
 ```javascript
 (function(){
@@ -218,7 +219,7 @@ Scene_Menu.prototype.createSprites = function(){
 
 rpgmaker mv中命令列表默认只显示文字，如果想要把我们想要在文字旁显示图片，需要修改命令窗口中绘制文字的那一部分代码。上一节我们目的是在为菜单场景中添加图片元素进去，主要在rpg.secens.js中操作，这次我们要修改窗口的绘制方式，所以来到rpg.windows.js中，找到Window_Command类：
 
-<img src="F:\New server\MV_Online\phoneApp\js\img\1568810179082.png" alt="1568810179082" style="zoom: 67%;" />
+![1568810179082.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568810179082.png?raw=true)
 
 它是选择命令窗口的超类，其中可以找到Window_Command.prototype.drawItem函数，其中有一个drawText方法：this.drawText(this.commandName(index), rect.x, rect.y, rect.width, align);，可以看到是这条代码绘制了命令的文本。另外，在Window_Base（所有窗口的超类）中还有一个drawIcon（绘制图标）的方法，
 
@@ -235,7 +236,7 @@ Window_Base.prototype.drawIcon = function(iconIndex, x, y) {
 
 它接受三个参数，iconIdex是图标的序号，它来自game\img\system\IconSet.png，从0开始数起，第一个图标是0，第二个是1，依此类推，其中，12、13、14、15、28、29、30、31的位置是我们自己添加的图标，x，y是图标显示的坐标信息。
 
-![1568860153923](F:\New server\phoneApp\js\img\1568860153923.png)
+![1568860153923](F:\New server\Tutorial\Plugin_Menu_Win10Style\img\1568860153923.png)
 
 所以我们通过修改Window_Command.prototype.drawItem，并利用drawIcon这个方法便可以在文本旁边显示图片，代码如下：
 
@@ -308,7 +309,7 @@ this.drawIcon(12, -3, 3)
 
 这样我们就把iconSet.png图片中的第12个icon画在了物品命令的旁边，最终效果图如下。
 
-![1568891333186](F:\New server\MV_Online\phoneApp\js\img\1568891333186.png)
+![1568891333186.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568891333186.png?raw=true)
 
 #### 2、创建“我的任务”磁贴，用来展示文字信息；创建设置命令磁贴，用来打开设置页面；创建win开始按钮命令，点击可以返回地图界面。
 
@@ -365,7 +366,7 @@ Scene_Menu.prototype.createMissionWindow = function() {
 
 效果如图：
 
-<img src="C:\Users\xipudata\AppData\Roaming\Typora\typora-user-images\1568868246288.png" alt="1568868246288" style="zoom: 67%;" />
+<img src="F:\New server\Tutorial\Plugin_Menu_Win10Style\img\1568868246288.png" alt="1568868246288" style="zoom: 67%;" />
 
 创建win开始按钮和新增上面这个窗口原理是一样的，只是之前绘制的是文字，这里我们需要添加一个命令。直接来看这部分代码：
 
@@ -440,11 +441,11 @@ this.createGotoMapWindow();
 
 除了有这样一个滑动效果外，我们无论点击磁贴的哪个位置，都可以进入相关界面，但rmmv默认的选择框是窄窄的长方形，如下图：
 
-![1568973517240](F:\New server\MV_Online\phoneApp\js\img\1568973517240.png)
+![1568973517240.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568973517240.png?raw=true)
 
 这里我们需要将这个框的大小覆盖至整块磁贴，也就是增加框的高度，如图：
 
-![1568973613856](F:\New server\MV_Online\phoneApp\js\img\1568973613856.png)
+![1568973613856.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568973613856.png?raw=true)
 
 #### 1、磁贴滑动效果的实现
 
@@ -477,9 +478,9 @@ this.createGotoMapWindow();
     };
 ```
 
-<img src="F:\New server\MV_Online\phoneApp\js\img\1568976987666.png" alt="1568976987666" style="zoom:50%;" />
+![1568976987666.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568976987666.png?raw=true)
 
-<img src="F:\New server\MV_Online\phoneApp\js\img\1568977013699.png" alt="1568977013699" style="zoom:50%;" />
+![1568977013699.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568977013699.png?raw=true)
 
 #### 2、将选择高亮框扩展覆盖至整块磁贴
 
@@ -487,11 +488,11 @@ this.createGotoMapWindow();
 
 修改前：
 
-![1569164098890](F:\New server\MV_Online\phoneApp\js\img\1569164098890.png)
+![1569164098890.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569164098890.png?raw=true)
 
 修改后：
 
-![1569164148115](F:\New server\MV_Online\phoneApp\js\img\1569164148115.png)
+![1569164148115.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569164148115.png?raw=true)
 
 我们可以在rpg.windows.js中找到Window_Selectable.prototype.updateCursor，修改它即可，但不要直接操作这个函数，我们新建一个窗口——Window_optionCommand，代码如下：
 
@@ -641,6 +642,6 @@ rect.height += selectHeight；
 
 ![1569235424235](F:\New server\MV_Online\phoneApp\js\img\1569235424235.png)
 
-<img src="F:\New server\phoneApp\js\img\1569235449898.png" alt="1569235449898" style="zoom:50%;" />
+<img src="F:\New server\Tutorial\Plugin_Menu_Win10Style\img\1569235449898.png" alt="1569235449898" style="zoom:50%;" />
 
-<img src="F:\New server\MV_Online\phoneApp\js\img\1569235911234.png" alt="1569235911234" style="zoom:50%;" />
+![1569235911234.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569235911234.png?raw=true)
