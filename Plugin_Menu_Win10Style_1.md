@@ -8,12 +8,30 @@
 
 **目标：**仿win10开始菜单
 
+**任务：**
+
+- [x] 添加图片背景
+- [x] 调整菜单窗口的布局：位置，大小，透明度
+- [x] 在命令文字旁绘制图片Icon
+- [x] 添加新的窗口，并在窗口内显示文字或者设置一个命令
+- [x] 动态效果的实现（磁贴向上滑动动画）
+- [x] 修改选择高亮框的大小
+
+**目录：**
+
+[【RpgmakerMV】插件编写实战一：跳过标题，为窗口添加win瓷砖风格背景&自定义菜单窗口位置、大小、透明度](https://qsociety.github.io/RMMVTutorial/Plugin_Menu_Win10Style_1)
+
+[【RpgmakerMV】插件编写实战系列三：实现磁贴滑动效果&将选择高亮框扩展覆盖至整块磁贴，添加插件描述、作者、帮助及命令参数](https://qsociety.github.io/RMMVTutorial/Plugin_Menu_Win10Style_2)
+
+[【RpgmakerMV】插件编写实战系列二：仿win10菜单列表，新增窗口并显示指定文字/命令](https://qsociety.github.io/RMMVTutorial/Plugin_Menu_Win10Style_2)
+
+
+
 <img src="https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569235911234.png?raw=true" alt="1569235911234.png" style="zoom:50%;" />
 
 **RMMV插件目录结构：**
 
 ![pluginDesc.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/pluginDesc.png?raw=true)
-
 
 ### **【RpgmakerMV】插件编写实战一：跳过标题，为窗口添加win瓷砖风格背景&自定义菜单窗口位置、大小、透明度**
 

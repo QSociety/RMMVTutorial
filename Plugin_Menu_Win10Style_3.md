@@ -203,8 +203,11 @@ var parameters = PluginManager.parameters('win10_menu_part1');
 rect.height += selectHeight；
 ```
 
-效果如图，全部完成后效果如图，教程结束
+效果如图，全部完成后菜单插件管理器界面如图。
+
+教程涉及的rmmv工程文件已在教程第一部分提供下载，win10_menu_part1是截至教程结束所完成的插件，win10_menu是完整的插件，谢谢观看！
 
 ![1569235424235.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569235424235.png?raw=true)
 
-![1569235449898.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569235449898.png?raw=true)
+<img src="https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569235449898.png?raw=true" alt="1569235449898.png" style="zoom: 50%;" />
+
