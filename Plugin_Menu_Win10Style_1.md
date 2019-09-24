@@ -123,9 +123,8 @@ var _wpMenu_create = Scene_Menu.prototype.create;
 >
 > 关系图如下：
 >
-> .\Plugin_Menu_Win10Style\img\2019-8-16-scene_menu.png
->
-> 12
+
+.\Plugin_Menu_Win10Style\img\2019-8-16-scene_menu.png
 
 接下来我们调整主菜单各个窗口到合适的位置，以命令窗口，_commandWindow为例，将以下代码添加到Scene_Menu.prototype.createSprites = function(){ }中，跟在this.createLayout()后面即可：
 
