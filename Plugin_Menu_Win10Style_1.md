@@ -8,6 +8,16 @@
 
 **目标：**仿win10开始菜单
 
+**下载：**
+
+百度网盘：https://pan.baidu.com/s/1dqWeMcttptzDrLn8aVD1lA
+
+（进入后选择Qcampus\RMMV\plugin_win10menu.rar)
+
+微信公众号：<img src="F:\New server\Tutorial\Plugin_Menu_Win10Style\img\qrcode_for_gh_2f9c0dddcf3e_258.jpg" alt="qrcode_for_gh_2f9c0dddcf3e_258" style="zoom:50%;" />
+
+
+
 **任务：**
 
 - [x] 添加图片背景
