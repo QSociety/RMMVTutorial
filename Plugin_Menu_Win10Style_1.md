@@ -10,7 +10,7 @@
 
 <img src="https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1569235911234.png?raw=true" alt="1569235911234.png" style="zoom:50%;" />
 
-RMMV插件目录结构：
+**RMMV插件目录结构：**
 
 ![pluginDesc.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/pluginDesc.png?raw=true)
 
@@ -123,8 +123,7 @@ var _wpMenu_create = Scene_Menu.prototype.create;
 >
 > 关系图如下：
 >
-
-.\Plugin_Menu_Win10Style\img\2019-8-16-scene_menu.png
+> ![2019-8-16-scene_menu.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/2019-8-16-scene_menu.png?raw=true)
 
 接下来我们调整主菜单各个窗口到合适的位置，以命令窗口，_commandWindow为例，将以下代码添加到Scene_Menu.prototype.createSprites = function(){ }中，跟在this.createLayout()后面即可：
 
@@ -145,11 +144,7 @@ Scene_Menu.prototype.createSprites = function(){
 
 同样的方法，可以为不同的窗口添加不同的图片背景，只是这一次需要将载入的图片坐标和窗口的坐标绑定在一起，并且要将窗口的透明度调整为0，为了实现这些，我们还需要创建Scene_Menu.prototype.update，Scene_Menu.prototype.updateSprites，Scene_Menu.prototype.updateLayout，当检测到用户加载了背景图后，会自动刷新，并执行updateLayout中设置的内容，完整代码如下，复制到你的插件中即可，本节结束：
 
-<img src="F:\New server\Tutorial\Plugin_Menu_Win10Style\img\1568797351921.png" alt="1568797351921" style="zoom:50%;" />
-
-
-
-
+<img src="https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568797351921.png?raw=true" alt="1568797351921.png" style="zoom:50%;" />
 
 ```javascript
 (function(){

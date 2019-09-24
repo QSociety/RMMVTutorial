@@ -21,7 +21,7 @@ Window_Base.prototype.drawIcon = function(iconIndex, x, y) {
 
 它接受三个参数，iconIdex是图标的序号，它来自game\img\system\IconSet.png，从0开始数起，第一个图标是0，第二个是1，依此类推，其中，12、13、14、15、28、29、30、31的位置是我们自己添加的图标，x，y是图标显示的坐标信息。
 
-![1568860153923](F:\New server\Tutorial\Plugin_Menu_Win10Style\img\1568860153923.png)
+![1568860153923.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568860153923.png?raw=true)
 
 所以我们通过修改Window_Command.prototype.drawItem，并利用drawIcon这个方法便可以在文本旁边显示图片，代码如下：
 
@@ -153,7 +153,7 @@ Scene_Menu.prototype.createMissionWindow = function() {
 
 效果如图：
 
-<img src="F:\New server\Tutorial\Plugin_Menu_Win10Style\img\1568868246288.png" alt="1568868246288" style="zoom: 67%;" />
+![1568868246288.png](https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/1568868246288.png?raw=true)
 
 创建win开始按钮和新增上面这个窗口原理是一样的，只是之前绘制的是文字，这里我们需要添加一个命令。直接来看这部分代码：
 
