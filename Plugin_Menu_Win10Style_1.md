@@ -97,7 +97,7 @@ ImageManager.loadWPMenus = function(filename) {
     };
 ```
 
-> Tip：loadBitmap是从模块的可执行文件中加载指定的位图资源的函数。
+> Tip：loadBitmap是从模块的可执行文件中加载指定的位图资源的函数；ImageManager在rpg_managers.js中有定义
 
 先在RMMV自带的Community_Basic.js插件中修改游戏分辨率为1200X720，然后为了方便我们布局背景图片的位置，可以在PS中将layout.png的尺寸同样调整为1200X720，RMMV中坐标原点的位置（0，0）在左上角，背景图片大小设置为游戏分辨率大小，就不用我们再去调整图片坐标点的位置，可以直接在这张图片里决定好背景图要在的位置，我们得到的图片如下，是win10开始菜单底图的样式：
 
@@ -111,12 +111,14 @@ ImageManager.loadWPMenus = function(filename) {
 var _wpMenu_createBackground = Scene_Menu.prototype.createBackground;
     Scene_Menu.prototype.createBackground = function(){
         _wpMenu_createBackground.call(this);
-        this._field = new Sprite();//可以把这个_field理解成一块黑板，接下来我们所有的图片元素都得贴到这块黑板上
-        this.addChild(this._field);
+        this._field = new Sprite();
+        this.addChild(this._field);//讲——field添加到父级容器中，这里是Scene_Menu
     };
 ```
 
-> **Tip：**下划线是一种常用的记号，通常变量前加下划线表示“私有变量”，函数名前加下划线表示“私有函数”，没有特别的含义，只是为了维护方便。
+> **Tip：**下划线是一种常用的记号，通常变量前加下划线表示“私有变量”，函数名前加下划线表示“私有函数”，没有特别的含义，只是为了维护方便。 
+>
+> 第一句var之后，Scene_Menu.prototype.createBackground等于_wpMenu_createBackground，然后Scene_Menu.prototype.createBackground再等于后面的函数。所以这里_的wpMenu_createBackground.call(this)是把原先的createBackground执行一下，然后再把下面新的内容添加到自身，这样就扩展了原先的方法。
 
 光上面的代码是不够的，我们可以在Scene_Menu代码部分找到这样一个函数：Scene_Menu.prototype.create，可以发现主菜单显示的命令窗口，角色状态窗口，金币数量展示窗口都是在这个函数中定义的，所以接下来我们加载图片的方法Scene_Menu.prototype.createSprites也需要先在这里“登记”一下，将this,createSprites()放入Scene_Menu.prototype.create中，同上文的处理方式一样，将这个函数赋值给私有变量_wpMenu_create，代码如下：
 
