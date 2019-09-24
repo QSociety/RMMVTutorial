@@ -14,7 +14,7 @@
 
 （进入后选择Qcampus\RMMV\plugin_win10menu.rar)
 
-微信公众号：<img src="F:\New server\Tutorial\Plugin_Menu_Win10Style\img\qrcode_for_gh_2f9c0dddcf3e_258.jpg" alt="qrcode_for_gh_2f9c0dddcf3e_258" style="zoom:50%;" />
+微信公众号：<img src="https://github.com/QSociety/RMMVTutorial/blob/master/Plugin_Menu_Win10Style/img/qrcode_for_gh_2f9c0dddcf3e_258.jpg?raw=true" alt="qrcode_for_gh_2f9c0dddcf3e_258.jpg" style="zoom:50%;" />
 
 
 
