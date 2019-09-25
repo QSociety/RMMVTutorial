@@ -1,4 +1,4 @@
-# 【RpgmakerMV】插件编写实战
+# 【RpgmakerMV】菜单插件编写实战
 
 **工具&软件：**Visual studio code，PS，Rpgmaker MV
 
